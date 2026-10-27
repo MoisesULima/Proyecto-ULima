@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerTopDown : MonoBehaviour
 {
     // Creamos un campo (atributo) para que guarde las cerezas recogidas
     int cherries;
+    [SerializeField] TextMeshProUGUI textoCerezas;
 
     void Awake()
     {
@@ -17,6 +20,7 @@ public class GameManagerTopDown : MonoBehaviour
     {
         // Este código aumenta de 1 en 1 el contador de cerezas
         cherries++;
+        textoCerezas.text = "x " + cherries;
         Debug.Log("Cerezas: " + cherries);
     }
 }
